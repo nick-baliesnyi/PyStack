@@ -182,7 +182,7 @@ for street in range(1,4):
 		NEXT_ROUND_VALUES[street] = NextRoundValue( street, skip_iterations=arguments.cfr_skip_iters,
 													leaf_nodes_iterations=arguments.leaf_nodes_iterations[street_name] )
 	except:
-		print("Didin't found {} neural network... In case if this street's nn is not needed, program will not stop.")
+		print(f"Didn't find neural network for street {street}... In case if this street's nn is not needed, program will not stop.")
 
 def get_next_round_value(street):
 	return NEXT_ROUND_VALUES[street]

@@ -56,7 +56,7 @@ class RangeGenerator():
 		@param: [0-5] :vector of board cards, where card is unique index (int)
 		'''
 		HC = constants.hand_count
-		hand_strengths = evaluator.evaluate_board(board) if board.shape[0] == 5 else hand_strengths
+		hand_strengths = evaluator.evaluate_board(board) if board.shape and board.shape[0] == 5 else hand_strengths
 		# get possible hands mask for particular board
 		possible_hand_indexes = card_tools.get_possible_hands_mask(board).astype(bool)
 		self.possible_hands_count = possible_hand_indexes.sum()
